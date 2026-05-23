@@ -15,6 +15,19 @@
     const searchButton = document.getElementById('search-button');
     const searchInput = document.getElementById('pageSearchInput');
     const searchResults = document.getElementById('searchResults');
+    const searchModalElement = document.getElementById('searchModal');
+    
+    // Initialize the Bootstrap modal properly
+    const searchModal = new bootstrap.Modal(searchModalElement, {
+        backdrop: true,
+        keyboard: true
+    });
+    
+    // Auto-focus search input when modal opens
+    searchModalElement.addEventListener('shown.bs.modal', function() {
+        searchInput.focus();
+        searchInput.select(); // Select any existing text
+    });
     
     searchButton.addEventListener('click', function() {
         performSearch();
@@ -35,6 +48,42 @@
             return;
         }
         
+        // Define available pages
+        const pages = {
+            'home': 'index.html',
+            'about': 'about.html',
+            'service': 'service.html',
+            'services': 'service.html',
+            'blog': 'blog.html',
+            'contact': 'contact.html',
+            'project': 'project.html',
+            'projects': 'project.html',
+            'team': 'team.html',
+            'testimonial': 'testimonial.html',
+            'testimonials': 'testimonial.html',
+            '404': '404.html'
+        };
+        
+        // Check if search term matches a page name
+        if (pages[searchTerm]) {
+            searchResults.innerHTML = `
+                <div class="alert alert-info">
+                    Found page: <strong>${searchTerm.charAt(0).toUpperCase() + searchTerm.slice(1)}</strong>
+                </div>
+            `;
+            searchResults.classList.remove('d-none');
+            
+            // Close modal and navigate
+            if (searchModal) {
+                searchModal.hide();
+            }
+            
+            setTimeout(() => {
+                window.location.href = pages[searchTerm];
+            }, 300);
+            return;
+        }
+        
         // Search through page content
         const pageText = document.body.innerText.toLowerCase();
         const matches = pageText.includes(searchTerm);
@@ -43,43 +92,94 @@
             // Highlight all matches on the page
             highlightSearchTerm(searchTerm);
             
+            // Find and scroll to first match
+            const firstMatch = findFirstMatch(searchTerm);
+            
             searchResults.innerHTML = `
                 <div class="alert alert-success">
-                    Found results for "${searchTerm}". Matches are highlighted on the page.
+                    Found results for "<strong>${searchTerm}</strong>". Matches are highlighted on the page.
                 </div>
                 <button class="btn btn-sm btn-outline-secondary" onclick="clearSearchHighlights()">
                     Clear highlights
                 </button>
             `;
+            
+            searchResults.classList.remove('d-none');
+            
+            // Close the modal and scroll to the match
+            if (searchModal) {
+                searchModal.hide();
+            }
+            
+            // Scroll to the match after a delay
+            setTimeout(() => {
+                if (firstMatch) {
+                    firstMatch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }, 500);
         } else {
             searchResults.innerHTML = `
                 <div class="alert alert-danger">
-                    No results found for "${searchTerm}"
+                    No results found for "<strong>${searchTerm}</strong>". Try searching for page names like "about", "service", or "contact".
                 </div>
             `;
+            searchResults.classList.remove('d-none');
+        }
+    }
+    
+    function findFirstMatch(term) {
+        const regex = new RegExp(term, 'gi');
+        
+        function searchNodes(node) {
+            if (node.nodeType === 3) { // Text node
+                if (regex.test(node.textContent)) {
+                    return node.parentElement;
+                }
+                regex.lastIndex = 0; // Reset regex
+            } else if (node.nodeType === 1 && node.nodeName !== 'SCRIPT' && node.nodeName !== 'STYLE') { // Element node
+                for (let i = 0; i < node.childNodes.length; i++) {
+                    const result = searchNodes(node.childNodes[i]);
+                    if (result) return result;
+                }
+            }
+            return null;
         }
         
-        searchResults.classList.remove('d-none');
-        searchModal.hide();
+        return searchNodes(document.body);
     }
 });
 
 function highlightSearchTerm(term) {
     clearSearchHighlights();
     
-    const bodyText = document.body.innerHTML;
-    const regex = new RegExp(term, 'gi');
-    const newText = bodyText.replace(regex, match => 
-        `<span class="search-highlight bg-warning">${match}</span>`
-    );
+    const bodyContent = document.body;
+    const regex = new RegExp(`(${term})`, 'gi');
     
-    document.body.innerHTML = newText;
+    function highlightNodes(node) {
+        if (node.nodeType === 3) { // Text node
+            if (regex.test(node.textContent)) {
+                const span = document.createElement('span');
+                span.innerHTML = node.textContent.replace(regex, '<span class="search-highlight bg-warning">$1</span>');
+                node.parentNode.replaceChild(span, node);
+            }
+        } else if (node.nodeType === 1 && node.nodeName !== 'SCRIPT' && node.nodeName !== 'STYLE') { // Element node
+            for (let i = 0; i < node.childNodes.length; i++) {
+                highlightNodes(node.childNodes[i]);
+            }
+        }
+    }
+    
+    highlightNodes(bodyContent);
 }
 
 function clearSearchHighlights() {
     const highlights = document.querySelectorAll('.search-highlight');
     highlights.forEach(highlight => {
-        highlight.outerHTML = highlight.innerHTML;
+        const parent = highlight.parentNode;
+        while (highlight.firstChild) {
+            parent.insertBefore(highlight.firstChild, highlight);
+        }
+        parent.removeChild(highlight);
     });
 }
 
