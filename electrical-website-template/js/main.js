@@ -356,8 +356,36 @@ function translatePage(lang) {
     new WOW().init();
 
 
+    function bindCarouselNav($wrap, $carousel) {
+        $wrap.find('.carousel-custom-prev').on('click', function () {
+            $carousel.trigger('prev.owl.carousel');
+        });
+        $wrap.find('.carousel-custom-next').on('click', function () {
+            $carousel.trigger('next.owl.carousel');
+        });
+    }
+
+    function wrapCarouselWithNav($carousel) {
+        if ($carousel.parent().hasClass('carousel-wrap')) {
+            return $carousel.parent();
+        }
+        $carousel.wrap('<div class="carousel-wrap position-relative"></div>');
+        var $wrap = $carousel.parent();
+        $wrap.append(
+            '<button type="button" class="carousel-custom-nav carousel-custom-prev" aria-label="Previous slide">' +
+                '<i class="fas fa-chevron-left" aria-hidden="true"></i>' +
+            '</button>' +
+            '<button type="button" class="carousel-custom-nav carousel-custom-next" aria-label="Next slide">' +
+                '<i class="fas fa-chevron-right" aria-hidden="true"></i>' +
+            '</button>'
+        );
+        return $wrap;
+    }
+
     // Header carousel
-    $(".header-carousel").owlCarousel({
+    var $headerCarousel = $(".header-carousel");
+    var $headerWrap = $headerCarousel.closest('.header-carousel-wrap');
+    $headerCarousel.owlCarousel({
         animateOut: 'fadeOut',
         items: 1,
         margin: 0,
@@ -366,45 +394,33 @@ function translatePage(lang) {
         smartSpeed: 1000,
         dots: false,
         loop: true,
-        nav : true,
-        navText : [
-            '<i class="bi bi-arrow-left"></i>',
-            '<i class="bi bi-arrow-right"></i>'
-        ],
+        nav: false
     });
+    bindCarouselNav($headerWrap, $headerCarousel);
 
 
-   // Service-carousel
-   $(".service-carousel").owlCarousel({
-    autoplay: true,
-    smartSpeed: 2000,
-    center: false,
-    dots: false,
-    loop: true,
-    margin: 25,
-    nav : true,
-    navText : [
-        '<i class="bi bi-arrow-left"></i>',
-        '<i class="bi bi-arrow-right"></i>'
-    ],
-    responsiveClass: true,
-    responsive: {
-        0:{
-            items:1
-        },
-        576:{
-            items:1
-        },
-        768:{
-            items:2
-        },
-        992:{
-            items:2
-        },
-        1200:{
-            items:2
-        }
-    }
+    // Service carousel
+    $(".service-carousel").each(function () {
+        var $carousel = $(this);
+        var $wrap = wrapCarouselWithNav($carousel);
+        var owl = $carousel.owlCarousel({
+            autoplay: true,
+            smartSpeed: 2000,
+            center: false,
+            dots: false,
+            loop: true,
+            margin: 25,
+            nav: false,
+            responsiveClass: true,
+            responsive: {
+                0: { items: 1 },
+                576: { items: 1 },
+                768: { items: 2 },
+                992: { items: 2 },
+                1200: { items: 2 }
+            }
+        });
+        bindCarouselNav($wrap, $carousel);
     });
 
 

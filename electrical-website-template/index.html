@@ -44,14 +44,14 @@
         <!-- Navbar & Hero Start -->
         <div class="container-fluid header-top">
             <div class="container d-flex align-items-center">
-                <div class="d-flex align-items-center h-100">
-                    <a href="#index.html" class="navbar-brand" style="height: 125px;">
+                <div class="header-logo-col d-none d-lg-flex align-items-center h-100">
+                    <a href="index.html" class="navbar-brand">
                         <h2 class="text-primary mb-0"><i class="fas fa-bolt"></i> Lucknow Electrician</h2>
                         <!-- <img src="img/logo.png" alt="Logo"> -->
                     </a>
                 </div>
                 <div class="w-100 h-100">
-                    <div class="topbar px-0 py-2 d-none d-lg-block" style="height: 45px;">
+                    <div class="topbar px-0 py-2 d-none d-lg-block">
                         <div class="row gx-0 align-items-center">
                             <div class="col-lg-8 text-center text-lg-center mb-lg-0">
                                 <div class="d-flex flex-wrap">
@@ -89,16 +89,24 @@
                             </div>
                         </div>
                     </div>
-                    <div class="nav-bar px-0 py-lg-0" style="height: 80px;">
-                        <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-lg-end">
-                            <a href="#" class="navbar-brand-2">
-                                <h1 class="text-primary mb-0"><i class="fas fa-bolt"></i> Lucknow Electrician</h1>
-                                <!-- <img src="img/logo.png" alt="Logo"> -->
-                            </a>  
-                            <button class="navbar-toggler collapsed" type="button" title="Toggle navigation" aria-controls="navbarCollapse" 
-                            aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                                <span class="fa fa-bars"></span>
-                            </button>
+                    <div class="nav-bar px-0 py-lg-0">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <div class="navbar-brand-block d-lg-none">
+                                <a href="index.html" class="navbar-brand navbar-brand-2">
+                                    <h2 class="text-primary mb-0"><i class="fas fa-bolt"></i> Lucknow Electrician</h2>
+                                </a>
+                                <a href="https://maps.app.goo.gl/E9Nb886XWdMB4ZjE9" class="navbar-location-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-map-marker-alt text-primary me-1"></i>Bijnor, Lucknow
+                                </a>
+                            </div>
+                            <div class="navbar-mobile-tools d-flex d-lg-none align-items-center gap-2 ms-auto flex-shrink-0">
+                                <a href="https://wa.me/qr/BQUWHXNHBHBKP1" class="btn btn-primary btn-sm whatsapp nav-whatsapp-link navbar-whatsapp-mobile" target="_blank" rel="noopener noreferrer" aria-label="Contact on WhatsApp">
+                                    <i class="fab fa-whatsapp"></i><span class="navbar-whatsapp-text ms-1">WhatsApp</span>
+                                </a>
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                            </div>
                             <div class="collapse navbar-collapse" id="navbarCollapse">
                                 <div class="navbar-nav mx-0 mx-lg-auto bg-white">
                                     <a href="index.html" class="nav-item nav-link active">Home</a>
@@ -117,9 +125,8 @@
                                     </div>
                                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                                     <div class="nav-btn ps-3">
-                                        <button class="btn-search btn btn-primary btn-md-square mt-2 mt-lg-0 mb-4 mb-lg-0 flex-shrink-0" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
-                                        <a href="https://wa.me/qr/BQUWHXNHBHBKP1" class="btn btn-primary py-2 px-3 ms-0 ms-lg-3 whatsapp" target="_blank" 
-                                            rel="noopener noreferrer">Contact on WhatsApp</a>
+                                        <button class="btn-search btn btn-primary btn-md-square mb-lg-0 flex-shrink-0" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
+                                        <a href="https://wa.me/qr/BQUWHXNHBHBKP1" class="btn btn-primary py-2 px-3 ms-0 ms-lg-3 whatsapp nav-whatsapp-link d-none d-lg-inline-block" target="_blank" rel="noopener noreferrer">Contact on WhatsApp</a>
                                     </div>
                                 </div>
                             </div>
@@ -154,7 +161,8 @@
 
 
         <!-- Carousel Start -->
-        <div class="header-carousel owl-carousel overflow-hidden">
+        <div class="header-carousel-wrap position-relative">
+            <div class="header-carousel owl-carousel">
             <div class="header-carousel-item hero-section">
                 <div class="hero-bg-half-1"></div>
                 <div class="hero-shape-1"></div>
@@ -164,7 +172,7 @@
                             <div class="col-lg-7 animated fadeInLeft">
                                 <div class="text-sm-center text-md-start">
                                     <h4 class="text-white text-uppercase fw-bold mb-4">Current Electricity Services</h4>
-                                    <h1 class="display-2 text-white mb-4">Comprehensive House Wiring & Repair Services</h1>
+                                    <h2 class="display-2 text-white mb-4">Comprehensive House Wiring & Repair Services</h2>
                                     <p class="mb-5 fs-5">Expert Residential and Commercial Electrical Services – Reliable, Safe, and Efficient Solutions for your needs!</p>
                                     <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
                                         <a class="btn btn-light py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i> Watch Video</a>
@@ -197,6 +205,13 @@
                     </div>
                 </div>
             </div>
+            </div>
+            <button type="button" class="carousel-custom-nav carousel-custom-prev" aria-label="Previous slide">
+                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button type="button" class="carousel-custom-nav carousel-custom-next" aria-label="Next slide">
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </button>
         </div>
         <!-- Carousel End -->
 
