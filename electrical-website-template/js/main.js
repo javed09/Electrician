@@ -183,9 +183,173 @@ function clearSearchHighlights() {
     });
 }
 
+// Language Toggle Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const languages = {
+        'English': 'en',
+        'Bangla': 'bn',
+        'French': 'fr',
+        'Spanish': 'es',
+        'Arabic': 'ar'
+    };
+    
+    const languageToggle = document.getElementById('languageDropdown');
+    
+    // Store original English text in data attributes on page load
+    storeOriginalText();
+    
+    // Get current language from localStorage or default to English
+    const currentLang = localStorage.getItem('selectedLanguage') || 'English';
+    if (languageToggle) {
+        languageToggle.innerHTML = `<small class="text-muted small"><i class="fas fa-globe-europe text-primary me-2"></i> ${currentLang}</small>`;
+    }
+    
+    // Apply saved language on page load
+    const savedLang = localStorage.getItem('currentLanguage') || 'en';
+    if (savedLang !== 'en') {
+        translatePage(savedLang);
+    }
+    
+    // Use event delegation for language items (works even after DOM changes)
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.language-item')) {
+            e.preventDefault();
+            const selectedLang = e.target.closest('.language-item').getAttribute('data-lang');
+            
+            // Save selected language
+            localStorage.setItem('selectedLanguage', selectedLang);
+            
+            // Update the dropdown button text
+            if (languageToggle) {
+                languageToggle.innerHTML = `<small class="text-muted small"><i class="fas fa-globe-europe text-primary me-2"></i> ${selectedLang}</small>`;
+            }
+            
+            // Apply language translation
+            translatePage(languages[selectedLang]);
+            
+            // Close the dropdown manually
+            const dropdown = bootstrap.Dropdown.getInstance(languageToggle);
+            if (dropdown) {
+                dropdown.hide();
+            }
+        }
+    });
+});
 
+// Store original English text in data attributes
+function storeOriginalText() {
+    const navLinks = document.querySelectorAll('.nav-link, .nav-btn a');
+    navLinks.forEach(link => {
+        if (!link.hasAttribute('data-original-text')) {
+            link.setAttribute('data-original-text', link.textContent.trim());
+        }
+    });
+    
+    const dropdownItems = document.querySelectorAll('.dropdown-item:not(.language-item)');
+    dropdownItems.forEach(item => {
+        if (!item.hasAttribute('data-original-text')) {
+            item.setAttribute('data-original-text', item.textContent.trim());
+        }
+    });
+}
 
-
+// Translation function with sample translations
+function translatePage(lang) {
+    const translations = {
+        'en': {
+            'Home': 'Home',
+            'About': 'About',
+            'Service': 'Service',
+            'Blog': 'Blog',
+            'Pages': 'Pages',
+            'Contact': 'Contact',
+            'Our projects': 'Our projects',
+            'Our team': 'Our team',
+            'Testimonial': 'Testimonial',
+            '404 Page': '404 Page',
+            'Contact on WhatsApp': 'Contact on WhatsApp'
+        },
+        'bn': {
+            'Home': 'বাড়ি',
+            'About': 'সম্পর্কে',
+            'Service': 'পরিষেবা',
+            'Blog': 'ব্লগ',
+            'Pages': 'পৃষ্ঠা',
+            'Contact': 'যোগাযোগ করুন',
+            'Our projects': 'আমাদের প্রকল্প',
+            'Our team': 'আমাদের দল',
+            'Testimonial': 'প্রশংসাপত্র',
+            '404 Page': '404 পৃষ্ঠা',
+            'Contact on WhatsApp': 'হোয়াটসঅ্যাপে যোগাযোগ করুন'
+        },
+        'fr': {
+            'Home': 'Accueil',
+            'About': 'À propos',
+            'Service': 'Service',
+            'Blog': 'Blog',
+            'Pages': 'Pages',
+            'Contact': 'Contact',
+            'Our projects': 'Nos projets',
+            'Our team': 'Notre équipe',
+            'Testimonial': 'Témoignage',
+            '404 Page': 'Page 404',
+            'Contact on WhatsApp': 'Contactez-nous sur WhatsApp'
+        },
+        'es': {
+            'Home': 'Inicio',
+            'About': 'Acerca de',
+            'Service': 'Servicio',
+            'Blog': 'Blog',
+            'Pages': 'Páginas',
+            'Contact': 'Contacto',
+            'Our projects': 'Nuestros proyectos',
+            'Our team': 'Nuestro equipo',
+            'Testimonial': 'Testimonio',
+            '404 Page': 'Página 404',
+            'Contact on WhatsApp': 'Contáctenos en WhatsApp'
+        },
+        'ar': {
+            'Home': 'الرئيسية',
+            'About': 'حول',
+            'Service': 'خدمة',
+            'Blog': 'مدونة',
+            'Pages': 'الصفحات',
+            'Contact': 'اتصل',
+            'Our projects': 'مشاريعنا',
+            'Our team': 'فريقنا',
+            'Testimonial': 'شهادة',
+            '404 Page': 'صفحة 404',
+            'Contact on WhatsApp': 'تواصل معنا على WhatsApp'
+        }
+    };
+    
+    // First, store original text if not already stored
+    storeOriginalText();
+    
+    // Apply translations using stored original text
+    const navLinks = document.querySelectorAll('.nav-link, .nav-btn a');
+    navLinks.forEach(link => {
+        const originalText = link.getAttribute('data-original-text');
+        if (originalText && translations[lang] && translations[lang][originalText]) {
+            link.textContent = translations[lang][originalText];
+        }
+    });
+    
+    // Translate dropdown items but exclude language items
+    const dropdownItems = document.querySelectorAll('.dropdown-item:not(.language-item)');
+    dropdownItems.forEach(item => {
+        const originalText = item.getAttribute('data-original-text');
+        if (originalText && translations[lang] && translations[lang][originalText]) {
+            item.textContent = translations[lang][originalText];
+        }
+    });
+    
+    // Set document language
+    document.documentElement.lang = lang;
+    
+    // Store the language preference
+    localStorage.setItem('currentLanguage', lang);
+}
 
     
     // Initiate the wowjs
