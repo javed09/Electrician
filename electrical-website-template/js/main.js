@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'Bangla': 'bn',
         'French': 'fr',
         'Spanish': 'es',
-        'Arabic': 'ar'
+        'Hindi': 'hi'
     };
     
     const languageToggle = document.getElementById('languageDropdown');
@@ -308,18 +308,18 @@ function translatePage(lang) {
             '404 Page': 'Página 404',
             'Contact on WhatsApp': 'Contáctenos en WhatsApp'
         },
-        'ar': {
-            'Home': 'الرئيسية',
-            'About': 'حول',
-            'Service': 'خدمة',
-            'Blog': 'مدونة',
-            'Pages': 'الصفحات',
-            'Contact': 'اتصل',
-            'Our projects': 'مشاريعنا',
-            'Our team': 'فريقنا',
-            'Testimonial': 'شهادة',
-            '404 Page': 'صفحة 404',
-            'Contact on WhatsApp': 'تواصل معنا على WhatsApp'
+        'hi': {
+            'Home': 'होम',
+            'About': 'हमारे बारे में',
+            'Service': 'सेवा',
+            'Blog': 'ब्लॉग',
+            'Pages': 'पृष्ठ',
+            'Contact': 'संपर्क करें',
+            'Our projects': 'हमारे प्रोजेक्ट',
+            'Our team': 'हमारी टीम',
+            'Testimonial': 'प्रशंसापत्र',
+            '404 Page': '404 पृष्ठ',
+            'Contact on WhatsApp': 'WhatsApp पर संपर्क करें'
         }
     };
     
