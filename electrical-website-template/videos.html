@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Work Videos & Gallery - Lucknow Electrician</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="electrical services videos" name="keywords">
+        <meta content="Watch our electrical work - professional installations, repairs, and maintenance videos from Lucknow Electrician." name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Edu+TAS+Beginner:wght@400..700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link rel="stylesheet" href="lib/animate/animate.min.css"/>
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+
+        <style>
+            .video-container {
+                position: relative;
+                width: 100%;
+                padding-bottom: 56.25%;
+                height: 0;
+                overflow: hidden;
+                border-radius: 0.5rem;
+            }
+
+            .video-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            .gallery-item {
+                position: relative;
+                overflow: hidden;
+                border-radius: 0.5rem;
+                transition: transform 0.3s ease;
+            }
+
+            .gallery-item:hover {
+                transform: scale(1.05);
+            }
+
+            .gallery-item img {
+                width: 100%;
+                height: 250px;
+                object-fit: cover;
+                display: block;
+            }
+
+            .gallery-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.7);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            .gallery-item:hover .gallery-overlay {
+                opacity: 1;
+            }
+
+            .overlay-icon {
+                color: white;
+                font-size: 2rem;
+            }
+
+            .section-header {
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+
+            .video-card {
+                background: white;
+                border-radius: 0.5rem;
+                overflow: hidden;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+
+            .video-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            }
+
+            .video-title {
+                padding: 1rem;
+                background: #f8f9fa;
+            }
+
+            .video-description {
+                padding: 0.5rem 1rem 1rem;
+                font-size: 0.9rem;
+                color: #666;
+            }
+
+            .filter-btn {
+                margin: 0.5rem;
+                padding: 0.5rem 1.5rem;
+            }
+
+            .filter-buttons {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                margin-bottom: 2rem;
+            }
+
+            .gallery-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 2rem;
+            }
+
+            @media (max-width: 768px) {
+                .gallery-grid {
+                    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                    gap: 1rem;
+                }
+
+                .gallery-item img {
+                    height: 150px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid header-top">
+            <div class="container d-flex align-items-center">
+                <div class="header-logo-col d-none d-lg-flex align-items-center h-100">
+                    <a href="index.html" class="navbar-brand">
+                        <h2 class="text-primary mb-0"><i class="fas fa-bolt"></i> Lucknow Electrician</h2>
+                    </a>
+                </div>
+                <div class="w-100 h-100">
+                    <div class="topbar px-0 py-2 d-none d-lg-block">
+                        <div class="row gx-0 align-items-center">
+                            <div class="col-lg-8 text-center text-lg-center mb-lg-0">
+                                <div class="d-flex flex-wrap">
+                                    <div class="border-end border-primary pe-3">
+                                        <a href="https://maps.app.goo.gl/E9Nb886XWdMB4ZjE9" class="text-muted small" target="_blank" rel="noopener noreferrer"><i class="fas fa-map-marker-alt text-primary me-2 "></i>Bijnor, Lucknow</a>
+                                    </div>
+                                    <div class="ps-3">
+                                        <a href="mailto:aamirbabu80786@gmail.com" class="text-muted small"><i class="fas fa-envelope text-primary me-2"></i>aamirbabu80786@gmail.com</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 text-center text-lg-end">
+                                <div class="d-flex justify-content-end">
+                                    <div class="d-flex border-end border-primary pe-3">
+                                        <a class="btn p-0 text-primary me-3" href="https://www.facebook.com/share/1Ap8kvxx7K/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                                        <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-twitter"></i></a>
+                                        <a class="btn p-0 text-primary me-3" href="https://www.instagram.com/Lucknow.electrician?igsh=MW52aHYxeWt4MTJkeQ==" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                    <div class="dropdown ms-3">
+                                        <a href="#" id="languageDropdown" class="dropdown-toggle text-white" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false"><small class="text-muted small"><i class="fas fa-globe-europe text-primary me-2"></i> English</small></a>
+                                        <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                                            <a href="#" class="dropdown-item language-item" data-lang="English">English</a>
+                                            <a href="#" class="dropdown-item language-item" data-lang="Bangla">Bangla</a>
+                                            <a href="#" class="dropdown-item language-item" data-lang="French">French</a>
+                                            <a href="#" class="dropdown-item language-item" data-lang="Spanish">Spanish</a>
+                                            <a href="#" class="dropdown-item language-item" data-lang="Arabic">Arabic</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-bar px-0 py-lg-0">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <div class="navbar-brand-block d-lg-none">
+                                <a href="index.html" class="navbar-brand navbar-brand-2">
+                                    <h2 class="text-primary mb-0"><i class="fas fa-bolt"></i> Lucknow Electrician</h2>
+                                </a>
+                                <a href="https://maps.app.goo.gl/E9Nb886XWdMB4ZjE9" class="navbar-location-link" target="_blank" rel="noopener noreferrer">
+                                    <i class="fas fa-map-marker-alt text-primary me-1"></i>Bijnor, Lucknow
+                                </a>
+                            </div>
+                            <div class="navbar-mobile-tools d-flex d-lg-none align-items-center gap-2 ms-auto flex-shrink-0">
+                                <a href="https://wa.me/qr/BQUWHXNHBHBKP1" class="btn btn-primary btn-sm whatsapp nav-whatsapp-link navbar-whatsapp-mobile" target="_blank" rel="noopener noreferrer" aria-label="Contact on WhatsApp">
+                                    <i class="fab fa-whatsapp"></i><span class="navbar-whatsapp-text ms-1">WhatsApp</span>
+                                </a>
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                            </div>
+                            <div class="collapse navbar-collapse" id="navbarCollapse">
+                                <div class="navbar-nav mx-0 mx-lg-auto bg-white">
+                                    <a href="index.html" class="nav-item nav-link">Home</a>
+                                    <a href="about.html" class="nav-item nav-link">About</a>
+                                    <a href="service.html" class="nav-item nav-link">Service</a>
+                                    <a href="blog.html" class="nav-item nav-link">Blog</a>
+                                    <div class="nav-item dropdown">
+                                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                                        <div class="dropdown-menu">
+                                            <a href="project.html" class="dropdown-item">Our projects</a>
+                                            <a href="team.html" class="dropdown-item">Our team</a>
+                                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                                            <a href="404.html" class="dropdown-item">404 Page</a>
+                                            <a href="videos.html" class="dropdown-item">Work Videos</a>
+                                        </div>
+                                    </div>
+                                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                                    <div class="nav-btn ps-3">
+                                        <button class="btn-search btn btn-primary btn-md-square mb-lg-0 flex-shrink-0" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
+                                        <a href="https://wa.me/qr/BQUWHXNHBHBKP1" class="btn btn-primary py-2 px-3 ms-0 ms-lg-3 whatsapp nav-whatsapp-link d-none d-lg-inline-block" target="_blank" rel="noopener noreferrer">Contact on WhatsApp</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Modal Search Start -->
+        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-3">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="searchModalLabel">Search this site</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-group">
+                            <input type="search" id="pageSearchInput" class="form-control p-3" placeholder="What are you looking for?" aria-describedby="search-button">
+                            <button id="search-button" class="btn btn-primary input-group-text p-3" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <div id="searchResults" class="mt-3 d-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Search End -->
+
+        <!-- Page Header Start -->
+        <div class="container-fluid page-header py-5" style="background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('img/about-1.jpg'); background-size: cover; background-position: center;">
+            <div class="container py-5">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Work Videos & Gallery</h1>
+                <nav aria-label="breadcrumb animated slideInDown">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Videos & Gallery</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+        <!-- Videos Section Start -->
+        <div class="container-fluid py-5">
+            <div class="container py-5">
+                <div class="section-header mb-5 wow fadeInUp" data-wow-delay="0.2s">
+                    <h4 class="text-primary">Our Work Videos</h4>
+                    <h1 class="display-4 mb-4">Professional Electrical Installation & Repair Videos</h1>
+                    <p class="fs-5">Watch our team in action performing quality installations, repairs, and maintenance work. See the expertise and professionalism that goes into every project.</p>
+                </div>
+
+                <div class="row g-4 mb-5 wow fadeInUp" data-wow-delay="0.3s">
+                    <!-- Video 1: Residential Wiring -->
+                    <div class="col-lg-6 col-xl-4">
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Residential Wiring Installation" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="video-title">
+                                <h5 class="mb-0">Residential Wiring Installation</h5>
+                            </div>
+                            <div class="video-description">
+                                <p class="mb-0">Complete house wiring installation for a new residential property. Watch our team execute perfect installations with safety compliance.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video 2: Commercial Setup -->
+                    <div class="col-lg-6 col-xl-4">
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Commercial Electrical Panel Setup" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="video-title">
+                                <h5 class="mb-0">Commercial Electrical Panel Setup</h5>
+                            </div>
+                            <div class="video-description">
+                                <p class="mb-0">Professional electrical panel installation for commercial buildings. Ensuring safety, efficiency, and proper circuit management.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video 3: Appliance Installation -->
+                    <div class="col-lg-6 col-xl-4">
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Water Heater & AC Installation" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="video-title">
+                                <h5 class="mb-0">Water Heater & AC Installation</h5>
+                            </div>
+                            <div class="video-description">
+                                <p class="mb-0">Expert installation of water heaters and air conditioning units with proper wiring and safety measures.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video 4: Lighting Solutions -->
+                    <div class="col-lg-6 col-xl-4">
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Modern LED Lighting Installation" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="video-title">
+                                <h5 class="mb-0">Modern LED Lighting Installation</h5>
+                            </div>
+                            <div class="video-description">
+                                <p class="mb-0">Energy-efficient LED lighting setup for residential and commercial spaces with modern fixtures and smart controls.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video 5: Safety Systems -->
+                    <div class="col-lg-6 col-xl-4">
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Safety Device Installation" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="video-title">
+                                <h5 class="mb-0">Safety Device Installation</h5>
+                            </div>
+                            <div class="video-description">
+                                <p class="mb-0">Installation of MCB, RCCB, surge protectors, and grounding solutions for complete electrical safety.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Video 6: Repair & Maintenance -->
+                    <div class="col-lg-6 col-xl-4">
+                        <div class="video-card">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Electrical Repair & Troubleshooting" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="video-title">
+                                <h5 class="mb-0">Electrical Repair & Troubleshooting</h5>
+                            </div>
+                            <div class="video-description">
+                                <p class="mb-0">Professional troubleshooting and repair of electrical issues. From faulty wiring to circuit problems - expert solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Videos Section End -->
+
+        <!-- Gallery Section Start -->
+        <div class="container-fluid bg-light py-5">
+            <div class="container py-5">
+                <div class="section-header mb-5 wow fadeInUp" data-wow-delay="0.2s">
+                    <h4 class="text-primary">Project Gallery</h4>
+                    <h1 class="display-4 mb-4">Our Work in Progress & Completed Projects</h1>
+                    <p class="fs-5">Browse through our gallery of completed installations, repairs, and projects showcasing the quality of our electrical work.</p>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="filter-buttons wow fadeInUp" data-wow-delay="0.3s">
+                    <button class="btn btn-primary filter-btn active" data-filter="all">All</button>
+                    <button class="btn btn-outline-primary filter-btn" data-filter="residential">Residential</button>
+                    <button class="btn btn-outline-primary filter-btn" data-filter="commercial">Commercial</button>
+                    <button class="btn btn-outline-primary filter-btn" data-filter="appliances">Appliances</button>
+                    <button class="btn btn-outline-primary filter-btn" data-filter="lighting">Lighting</button>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="gallery-grid wow fadeInUp" data-wow-delay="0.4s">
+                    <!-- Residential Gallery Items -->
+                    <div class="gallery-item" data-category="residential">
+                        <img src="img/commercial-1.jpg" alt="Residential Wiring">
+                        <div class="gallery-overlay">
+                            <div class="overlay-icon">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="residential">
+                        <img src="img/commercial-2.jpg" alt="Home Lighting Setup">
+                        <div class="gallery-overlay">
+                            <div class="overlay-icon">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="residential">
+                        <img src="img/commercial-3.jpg" alt="Fan Installation">
+                        <div class="gallery-overlay">
+                            <div class="overlay-icon">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Commercial Gallery Items -->
+                    <div class="gallery-item" data-category="commercial">
+                        <img src="img/residential-1.jpg" alt="Commercial Panel">
+                        <div class="gallery-overlay">
+                            <div class="overlay-icon">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="commercial">
+                        <img src="img/residential-2.jpg" alt="Office Lighting">
+                        <div class="gallery-overlay">
+                            <div class="overlay-icon">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="commercial">
+                        <img src="img/residential-3.jpg" alt="Building Wiring">
+                        <div class="gallery-overlay">
+                            <div class="overlay-icon">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Appliances Gallery Items -->
+                    <div class="gallery-item" data-category="appliances">
+                        <img src="img/about-1.jpg" alt="Water Heater Installation">
+                        <div class="gallery-overlay">
+                            <div class="overlay-icon">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="appliances">
+                        <img src="img/about-2.jpg" alt="AC Installation">
+                        <div class="gallery-overlay">
+                            <div class="overlay-icon">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="appliances">
+                        <img src="img/industrial-1.jpg" alt="Kitchen Appliances Wiring">
+                        <div class="gallery-overlay">
+                            <div class="overlay-icon">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lighting Gallery Items -->
+                    <div class="gallery-item" data-category="lighting">
+                        <img src="img/industrial-2.jpg" alt="LED Lighting">
+                        <div class="gallery-overlay">
+                            <div class="overlay-icon">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="lighting">
+                        <img src="img/team-1.jpg" alt="Indoor Lighting Design">
+                        <div class="gallery-overlay">
+                            <div class="overlay-icon">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="lighting">
+                        <img src="img/team-2.jpg" alt="Outdoor Lighting">
+                        <div class="gallery-overlay">
+                            <div class="overlay-icon">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- All Category Items -->
+                    <div class="gallery-item" data-category="residential appliances">
+                        <img src="img/team-3.jpg" alt="Safety System Installation">
+                        <div class="gallery-overlay">
+                            <div class="overlay-icon">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="commercial lighting">
+                        <img src="img/team-4.jpg" alt="Commercial Lighting Solution">
+                        <div class="gallery-overlay">
+                            <div class="overlay-icon">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item" data-category="residential">
+                        <img src="img/about-1.jpg" alt="Electrical Box Installation">
+                        <div class="gallery-overlay">
+                            <div class="overlay-icon">
+                                <i class="fas fa-search-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Gallery Section End -->
+
+        <!-- CTA Banner Start -->
+        <div class="container-fluid banner py-5 wow zoomIn" data-wow-delay="0.2s">
+            <div class="banner-design-1"></div>
+            <div class="banner-design-2"></div>
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-8">
+                        <div class="">
+                            <h4 class="text-white">Impressed by Our Work?</h4>
+                            <h1 class="display-4 text-white mb-0">Let's Bring Professional Electrical Service to Your Project</h1>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="d-flex align-items-center justify-content-lg-end h-100">
+                            <a class="btn btn-primary py-3 px-2 px-md-5 ms-4 whatsapp" target="_blank" href="https://wa.me/qr/BQUWHXNHBHBKP1">Contact On WhatsApp</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- CTA Banner End -->
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer bg-dark py-5 wow fadeIn" data-wow-delay="0.2s">
+            <div class="container py-5">
+                <div class="row g-5 mb-5 align-items-center">
+                    <div class="col-lg-7">
+                        <div class="position-relative mx-auto">
+                            <input class="form-control w-100 py-3 ps-4 pe-5" type="text" placeholder="Have a Query? Email us">
+                            <a href="mailto:aamirbabu80786@gmail.com" class="btn btn-primary position-absolute top-0 end-0 py-2 px-4 mt-2 me-2" role="button">Write an Email</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="d-flex align-items-center justify-content-center justify-content-lg-end">
+                            <a class="btn btn-light btn-md-square me-3" href="https://www.facebook.com/share/1Ap8kvxx7K/"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-light btn-md-square me-3" href="https://www.instagram.com/Lucknow.electrician?igsh=MW52aHYxeWt4MTJkeQ=="><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-light btn-md-square me-0" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <div class="footer-item">
+                                <h3 class="text-white mb-4"><i class="fas fa-bolt text-primary me-3"></i>Lucknow Electrician</h3>
+                                <p class="mb-3">
+                                Ensuring safety, efficiency, and quality in every job I do. From small repairs to major installations, I'm here to help. Contact me today for fast and affordable electrical solutions!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4">Quick Links</h4>
+                            <a href="index.html"> Home</a>
+                            <a href="about.html"> About us</a>
+                            <a href="service.html"> Service</a>
+                            <a href="testimonial.html"> Testimonial</a>
+                            <a href="contact.html"> Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4">Electricity service</h4>
+                            <a href="#"> Air Conditioning</a>
+                            <a href="#"> Electrical Panels</a>
+                            <a href="#"> Security System</a>
+                            <a href="#"> Indoor Lighting</a>
+                            <a href="#"> Electrical Services</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="text-white mb-4">Contact Info</h4>
+                            <a href="https://maps.app.goo.gl/E9Nb886XWdMB4ZjE9"><i class="fa fa-map-marker-alt text-primary me-2"></i> Bijnor, Lucknow</a>
+                            <a href="mailto:aamirbabu80786@gmail.com"><i class="fas fa-envelope text-primary me-2"></i>aamirbabu80786@gmail</a>
+                            <a href="tel:+91 90978 07786"><i class="fas fa-phone text-primary me-2"></i> +91 90978 07786</a>
+                            <a href="tel:+91 90978 07786" class="mb-3"><i class="fas fa-print text-primary me-2"></i> +91 90978 07786</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-4 text-center text-md-start mb-md-0">
+                        <span class="text-body"><a href="#" class="border-bottom text-black"><i class="fas fa-copyright text-light me-2"></i>Lucknow Electrician</a>, All right reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end text-body">
+                        Designed By <a class="border-bottom text-black" href="#">Jarvis</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+
+        <!-- Gallery Filter Script -->
+        <script>
+            $(document).ready(function() {
+                // Gallery filter functionality
+                $('.filter-btn').on('click', function() {
+                    var filterValue = $(this).data('filter');
+
+                    // Update active button
+                    $('.filter-btn').removeClass('active');
+                    $(this).addClass('active');
+
+                    // Filter gallery items
+                    if (filterValue === 'all') {
+                        $('.gallery-item').fadeIn();
+                    } else {
+                        $('.gallery-item').fadeOut();
+                        $('.gallery-item[data-category*="' + filterValue + '"]').fadeIn();
+                    }
+                });
+            });
+        </script>
+    </body>
+
+</html>
