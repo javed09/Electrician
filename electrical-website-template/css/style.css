@@ -145,6 +145,17 @@ html, body {
     color: var(--dark-bg);
 }
 
+.experience-box {
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-dark) 100%) !important;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: var(--shadow-lg);
+    color: var(--white) !important;
+}
+
+.experience-box h4 {
+    color: var(--white) !important;
+}
+
 /* HEADER & NAVBAR */
 .header-top {
     background: var(--white);
@@ -691,7 +702,18 @@ html, body {
 }
 
 .header-carousel .header-carousel-item {
-    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-dark) 100%) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-blend-mode: multiply !important;
+}
+
+.header-carousel .carousel-item-1 {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(0, 61, 153, 0.50) 100%), url('../my_img/jhalar_main.png') !important;
+}
+
+.header-carousel .carousel-item-2 {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(0, 61, 153, 0.50) 100%), url('../my_img/1.jpg') !important;
 }
 
 /* Carousel custom prev/next buttons (left & right, vertically centered) */
@@ -818,6 +840,17 @@ section { padding: 60px 0; }
 .section-title { font-size: 36px; font-weight: 700; margin-bottom: 15px; color: var(--text-dark); }
 .section-subtitle { color: var(--text-light); font-size: 16px; margin-bottom: 40px; }
 .title-divider { width: 60px; height: 4px; background: linear-gradient(90deg, var(--primary-color) 0%, var(--accent-color) 100%); border-radius: 2px; margin-bottom: 20px; }
+
+/* PROJECTS */
+.projects-icon {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%) !important;
+    transition: all 0.3s ease;
+}
+
+.nav-item a:hover .projects-icon,
+.nav-item a.active .projects-icon {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-light) 100%) !important;
+}
 
 /* SERVICE CARDS */
 .service-card {
@@ -1008,26 +1041,49 @@ section { padding: 60px 0; }
 
 .footer-bottom p { margin: 0; font-size: 13px; color: rgba(255, 255, 255, 0.6); }
 
-.footer-social { display: flex; gap: 15px; margin-top: 20px; }
+.footer-social { display: flex; gap: 12px; }
 .footer-social a {
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--white);
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 18px;
 }
 
 .footer-social a:hover {
-    background: var(--accent-color);
-    color: var(--dark-bg);
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 82, 204, 0.4);
 }
 
-/* UTILITIES */
+.footer-social a.facebook:hover { background: #1877F2; border-color: #1877F2; }
+.footer-social a.twitter:hover { background: #1DA1F2; border-color: #1DA1F2; }
+.footer-social a.instagram:hover { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); border-color: transparent; }
+.footer-social a.linkedin:hover { background: #0077b5; border-color: #0077b5; }
+
+/* INSTAGRAM NAVBAR BUTTON */
+.btn-instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%) !important;
+    color: var(--white) !important;
+    border: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-instagram:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(214, 36, 159, 0.4);
+}
+
+/* SCROLLBAR */
 .section-bg-light { background: var(--light-bg); }
 .section-bg-dark { background: linear-gradient(135deg, var(--dark-bg) 0%, var(--dark-secondary) 100%); color: var(--white); }
 .text-primary { color: var(--primary-color) !important; }
