@@ -645,11 +645,11 @@ html, body {
 .hero-section {
     background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-dark) 100%);
     position: relative;
-    min-height: 700px;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     overflow: hidden;
-    padding: 60px 0;
+    padding: 100px 0;
 }
 
 .hero-section::before {
@@ -701,25 +701,44 @@ html, body {
     line-height: 1.8;
 }
 
+.carousel-caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+}
+
+.carousel-caption .container {
+    width: 100%;
+}
+
 .header-carousel .header-carousel-item {
     background-size: cover !important;
-    background-position: center !important;
+    background-position: center center !important;
     background-repeat: no-repeat !important;
-    background-blend-mode: multiply !important;
+    width: 100% !important;
+    position: relative;
 }
 
 .header-carousel .carousel-item-1 {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(0, 61, 153, 0.50) 100%), url('../my_img/jhalar_main.png') !important;
+    background-image: url('../my_img/jhalar_main.png') !important;
+    background-position: right top !important;
 }
 
 .header-carousel .carousel-item-2 {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(0, 61, 153, 0.50) 100%), url('../my_img/1.jpg') !important;
+    background-image: url('../my_img/1.jpg') !important;
 }
 
 /* Carousel custom prev/next buttons (left & right, vertically centered) */
 .header-carousel-wrap,
 .carousel-wrap {
     position: relative;
+    overflow: hidden !important;
 }
 
 .header-carousel.owl-carousel .owl-nav,
@@ -819,9 +838,57 @@ html, body {
 }
 
 @media (max-width: 768px) {
-    .hero-section { min-height: 500px; }
-    .hero-content h1 { font-size: 32px; }
-    .hero-content p { font-size: 16px; }
+    .display-1 { font-size: 3rem; }
+    .display-2 { font-size: 2.5rem; }
+    .display-3 { font-size: 2.2rem; }
+    .display-4 { font-size: 2rem; }
+    
+    .header-carousel .header-carousel-item {
+        min-height: 550px !important;
+        display: flex;
+        align-items: center;
+    }
+
+    .hero-section, .page-header { 
+        padding: 100px 0 60px 0 !important;
+        justify-content: center;
+    }
+    .hero-section p {
+        font-size: 1rem !important;
+    }
+    .carousel-caption {
+        position: relative;
+        bottom: 0;
+        padding: 0 50px !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        z-index: 1;
+    }
+    .carousel-custom-nav {
+        top: 50% !important;
+        bottom: auto !important;
+        transform: translateY(-50%) !important;
+        z-index: 10;
+    }
+    .carousel-custom-prev {
+        left: 5px !important;
+    }
+    .carousel-custom-next {
+        right: 5px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section .display-2 {
+        font-size: 2rem;
+    }
+    .hero-section .display-1 {
+        font-size: 2.5rem;
+    }
+    .hero-section {
+        padding: 80px 0 40px 0;
+    }
 }
 
 /* BREADCRUMB */
@@ -831,9 +898,14 @@ html, body {
     color: var(--white);
 }
 
-.bg-breadcrumb .breadcrumb { background: transparent; }
-.bg-breadcrumb .breadcrumb-item { color: rgba(255, 255, 255, 0.7); }
-.bg-breadcrumb .breadcrumb-item a { color: var(--accent-color); }
+@media (max-width: 768px) {
+    .bg-breadcrumb {
+        padding: 80px 0 40px 0;
+    }
+    .bg-breadcrumb .display-4 {
+        font-size: 2.2rem;
+    }
+}
 
 /* SECTIONS */
 section { padding: 60px 0; }
@@ -1095,6 +1167,43 @@ section { padding: 60px 0; }
 ::-webkit-scrollbar-track { background: var(--light-bg); }
 ::-webkit-scrollbar-thumb { background: var(--primary-color); border-radius: 4px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent-color); }
+
+/* FLOATING WHATSAPP BUTTON */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 90px; /* Adjusted to maintain spacing from the back-to-top button */
+    right: 25px;
+    width: 55px; /* Increased from 45px to be more prominent */
+    height: 55px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px; /* Increased from 24px */
+    box-shadow: var(--shadow-lg);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.floating-whatsapp:hover {
+    background-color: #128c7e;
+    transform: translateY(-5px); /* Slightly more lift on hover */
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .floating-whatsapp {
+        width: 50px;
+        height: 50px;
+        font-size: 26px;
+        bottom: 85px;
+        right: 25px;
+    }
+}
 
 @media (max-width: 768px) {
     section { padding: 40px 0; }
