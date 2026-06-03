@@ -710,7 +710,7 @@ html, body {
     display: flex;
     align-items: center;
     text-align: center;
-    z-index: 1;
+    z-index: 2;
 }
 
 .carousel-caption .container {
@@ -723,6 +723,30 @@ html, body {
     background-repeat: no-repeat !important;
     width: 100% !important;
     position: relative;
+}
+
+.header-carousel .header-carousel-item::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 61, 153, 0.30);
+    z-index: 1;
+}
+
+/* Specific styles for Desktop Carousel */
+.header-carousel-desktop .header-carousel-item {
+    /* Add desktop-specific overrides here */
+}
+
+.header-carousel-desktop .carousel-item-1 {
+}
+
+/* Specific styles for Mobile Carousel */
+.header-carousel-mobile .header-carousel-item {
+    /* Add mobile-specific overrides here */
 }
 
 .header-carousel .carousel-item-1 {
@@ -863,7 +887,7 @@ html, body {
         left: 0 !important;
         right: 0 !important;
         width: 100% !important;
-        z-index: 1;
+        z-index: 2;
     }
     .carousel-custom-nav {
         top: 50% !important;

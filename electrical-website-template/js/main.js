@@ -383,20 +383,22 @@ function translatePage(lang) {
     }
 
     // Header carousel
-    var $headerCarousel = $(".header-carousel");
-    var $headerWrap = $headerCarousel.closest('.header-carousel-wrap');
-    $headerCarousel.owlCarousel({
-        animateOut: 'fadeOut',
-        items: 1,
-        margin: 0,
-        stagePadding: 0,
-        autoplay: true,
-        smartSpeed: 1000,
-        dots: false,
-        loop: true,
-        nav: false
+    $(".header-carousel-wrap").each(function () {
+        var $wrap = $(this);
+        var $carousel = $wrap.find(".header-carousel");
+        $carousel.owlCarousel({
+            animateOut: 'fadeOut',
+            items: 1,
+            margin: 0,
+            stagePadding: 0,
+            autoplay: true,
+            smartSpeed: 1000,
+            dots: false,
+            loop: true,
+            nav: false
+        });
+        bindCarouselNav($wrap, $carousel);
     });
-    bindCarouselNav($headerWrap, $headerCarousel);
 
 
     // Service carousel
