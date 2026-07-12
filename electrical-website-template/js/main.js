@@ -460,17 +460,23 @@ function translatePage(lang) {
     });
 
 
-   // Back to top button
-   $(window).scroll(function () {
-    if ($(this).scrollTop() > 300) {
-        $('.back-to-top').fadeIn('slow');
-    } else {
-        $('.back-to-top').fadeOut('slow');
-    }
+    // Back to top button
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+            $('.back-to-top').fadeIn('slow');
+        } else {
+            $('.back-to-top').fadeOut('slow');
+        }
     });
     $('.back-to-top').click(function () {
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
         return false;
+    });
+
+    // WhatsApp Hover and Click Handler
+    $('a[href*="wa.me"], .floating-whatsapp, .whatsapp').attr('title', 'Aamir Sohail');
+    $('a[href*="wa.me"], .floating-whatsapp, .whatsapp').on('click', function () {
+        alert("Aamir Sohail");
     });
 
 

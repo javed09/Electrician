@@ -1,4 +1,4 @@
-﻿/* ===================================
+/* ===================================
    MODERN ELECTRICIAN WEBSITE CSS
    Professional & Clean Design
    ==================================== */
@@ -1014,6 +1014,12 @@ section { padding: 60px 0; }
 .blog-date { color: var(--accent-color); font-size: 13px; font-weight: 600; margin-bottom: 10px; }
 .blog-card h5 { font-size: 18px; font-weight: 600; margin-bottom: 12px; color: var(--text-dark); line-height: 1.5; }
 .blog-card p { color: var(--text-light); font-size: 14px; margin-bottom: 15px; line-height: 1.8; }
+
+.blog-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
 
 /* TEAM CARDS */
 .team-card {
